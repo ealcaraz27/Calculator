@@ -84,7 +84,17 @@ public class Calculator extends JFrame implements ActionListener{
 
         Calculator c = new Calculator();
         JPanel pan = new JPanel();
-
+        pan.setLayout(new BoxLayout(pan,BoxLayout.PAGE_AXIS));
+        JPanel r1 = new JPanel();
+        JPanel r2 = new JPanel();
+        JPanel r3 = new JPanel();
+        JPanel r4 = new JPanel();
+        JPanel r5 = new JPanel();
+        r1.setLayout(new BoxLayout(r1, BoxLayout.LINE_AXIS));
+        r2.setLayout(new BoxLayout(r2, BoxLayout.LINE_AXIS));
+        r3.setLayout(new BoxLayout(r3, BoxLayout.LINE_AXIS));
+        r4.setLayout(new BoxLayout(r4, BoxLayout.LINE_AXIS));
+        r5.setLayout(new BoxLayout(r5, BoxLayout.LINE_AXIS));
         zero.addActionListener(c);
         one.addActionListener(c);
         two.addActionListener(c);
@@ -105,27 +115,37 @@ public class Calculator extends JFrame implements ActionListener{
 
         r.setEditable(false);
         pan.add(r);
-        pan.add(zero);
-        pan.add(one);
-        pan.add(two);
-        pan.add(three);
-        pan.add(four);
-        pan.add(five);
-        pan.add(six);
-        pan.add(seven);
-        pan.add(eight);
-        pan.add(nine);
-        pan.add(plus);
-        pan.add(minus);
-        pan.add(div);
-        pan.add(mult);
-        pan.add(clear);
-        pan.add(eq);
-        pan.add(dec);
+        r1.add(Box.createHorizontalGlue());
+        r1.add(clear);
 
-        pan.setBackground(Color.white);
+        r2.add(seven);
+        r2.add(eight);
+        r2.add(nine);
+        r2.add(div);
+
+        r3.add(four);
+        r3.add(five);
+        r3.add(six);
+        r3.add(mult);
+
+        r4.add(one);
+        r4.add(two);
+        r4.add(three);
+        r4.add(minus);
+
+        r5.add(zero);
+        r5.add(dec);
+        r5.add(plus);
+        r5.add(eq);
+
+        pan.setBackground(Color.PINK);
+        pan.add(r1);
+        pan.add(r2);
+        pan.add(r3);
+        pan.add(r4);
+        pan.add(r5);
         p.add(pan);
-        p.setSize(400,400);
+        p.setSize(300,300);
         p.setVisible(true);
     }
 }
